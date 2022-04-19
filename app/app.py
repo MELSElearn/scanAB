@@ -80,11 +80,11 @@ def check_answer():
     crop_img = img[15:165, 45:195]
     items =['A','B','NA']
     
-    prediction,index = maskClassifier.getPrediction(crop_img, scale=1, draw= False) 
+    #prediction,index = maskClassifier.getPrediction(crop_img, scale=1, draw= False) 
     
-    cv2.putText(crop_img, str(items[index]), (50, 50), cv2.FONT_HERSHEY_PLAIN, 2, (0,0,0), 1)
+    #cv2.putText(crop_img, str(items[index]), (50, 50), cv2.FONT_HERSHEY_PLAIN, 2, (0,0,0), 1)
         
     _, im_arr = cv2.imencode('.png', crop_img)
     im_bytes = im_arr.tobytes()
     im_b64 = b64encode(im_bytes).decode("utf-8")
-    return str(items[index])
+    return str(items[0])
