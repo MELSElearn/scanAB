@@ -74,6 +74,7 @@ click_button3.addEventListener('click', function() {
 	canvas.style.display="block";
    	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 	let image_data_url = canvas.toDataURL('image/jpeg');
+	alert(image_data_url);
 	canvas.style.display="none";
 	$.ajax({type:'POST',
 		url: '/api/checkanswer',
